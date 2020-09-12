@@ -1,0 +1,6 @@
+import nltk
+nltk.download()
+ex = "hello, my name is mr. darshan. I am a computer engineer, and a guy."
+from nltk.tokenize import word_tokenize, sent_tokenize
+print(word_tokenize(ex))
+print(sent_tokenize(ex))

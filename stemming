@@ -1,0 +1,8 @@
+import nltk
+from nltk.stem import PorterStemmer, LancasterStemmer
+ps = PorterStemmer()
+ls = LancasterStemmer()
+text = 'running swimming dancing very better poorly'
+from nltk.tokenize import word_tokenize
+print([ps.stem(w) for w in word_tokenize(text)]) # PorterStemmer
+print([ls.stem(w) for w in word_tokenize(text)]) # LancasterStemmer

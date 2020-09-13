@@ -1,0 +1,8 @@
+import nltk
+from nltk.corpus import stopwords
+print(set(stopwords.words("english")))
+from nltk.tokenize import word_tokenize
+text = 'this is an example for stop words'
+sw = set(stopwords.words("english"))
+result = [w for w in word_tokenize(text) if not w in sw]
+print(result)

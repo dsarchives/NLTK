@@ -1,0 +1,5 @@
+import nltk
+from nltk.tokenize import word_tokenize
+sample_text = "John Doe was in California"
+ne = nltk.ne_chunk(nltk.pos_tag(word_tokenize(sample_text)))
+print(ne)

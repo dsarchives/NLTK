@@ -1,0 +1,19 @@
+from nltk.stem import PorterStemmer, LancasterStemmer
+from nltk.stem import WordNetLemmatizer
+from nltk.tokenize import word_tokenize
+
+lemmatizer = WordNetLemmatizer()
+ps = PorterStemmer()
+ls = LancasterStemmer()
+
+# reason 1
+print('lem:',[lemmatizer.lemmatize(i,pos='a') for i in word_tokenize('better')]) # lemmetization
+print('stem:')
+print([ps.stem(w) for w in word_tokenize('better')]) # PorterStemmer
+print([ls.stem(w) for w in word_tokenize('better')]) # LancasterStemmer
+
+# reason 2
+print('stem')
+print([ps.stem(w) for w in word_tokenize('he studies more')]) # PorterStemmer
+print([ls.stem(w) for w in word_tokenize('he studies more')]) # LancasterStemmer
+print('Lem', [lemmatizer.lemmatize(i) for i in word_tokenize('he studies more')]) # lemmetization

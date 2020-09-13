@@ -1,0 +1,6 @@
+import nltk
+import nltk
+from nltk.tokenize import word_tokenize
+sample_text = "Hi,How you been? Myself John. Nice to meet you, Darshan."
+tagged = nltk.pos_tag( nltk.word_tokenize(sample_text))
+print(tagged)

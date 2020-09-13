@@ -1,0 +1,11 @@
+import nltk
+from nltk.tokenize import word_tokenize
+import nltk
+from nltk.tokenize import word_tokenize
+words = nltk.word_tokenize('Chunking is used to add more structure to the sentence by following parts of speech tagging.')
+print(words)
+tagged = nltk.pos_tag(words) # POS Tagging
+regex = r"""NN: {<NN.?>*}""" # Define Rule
+parser = nltk.RegexpParser(regex) 
+chunked = parser.parse(tagged) # Parsed the regex
+chunked.draw() # Visualization

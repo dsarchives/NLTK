@@ -1,0 +1,10 @@
+## Part - 11  N-Grams in NLTK
+
+from nltk.collocations import BigramCollocationFinder
+
+wr = ['my','name','is','abc','his','name','is','xyz']
+
+find = BigramCollocationFinder.from_words(wr)
+
+print(find.ngram_fd.items())
+

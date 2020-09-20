@@ -1,0 +1,14 @@
+Part - 8 Corpus in NLTK
+
+from nltk.corpus import brown
+brown.root
+from nltk.corpus import brown
+brown.root
+from nltk.corpus import gutenberg
+from nltk.tokenize import sent_tokenize
+sample = gutenberg.raw("bible-kjv.txt")
+tok = sent_tokenize(sample)
+for x in range(7,12):
+    print(tok[x])
+brown.categories()
+brown.fileids(categories=['science_fiction'])

@@ -1,0 +1,27 @@
+## Part - 9  Wordnet in NLTK
+
+from nltk.corpus import wordnet
+
+x = wordnet.synsets('space')
+
+for i in wordnet.synsets('space'):
+    print(i," ",i.lemma_names())
+
+for i in range(len(x)):
+    print(x[i].definition())
+    print(x[i].examples())
+    print()
+
+syn = []
+for i in wordnet.synsets('dark'):
+    for j in i.lemmas():
+        syn.append(j.name())
+print(syn)
+
+anto = []
+for i in wordnet.synsets('dark'):
+    for j in i.lemmas():
+        if j.antonyms():
+            anto.append(j.antonyms()[0].name())
+print(anto)
+

@@ -1,0 +1,13 @@
+##  12 - WSD (Word Sense Disambiguation)
+
+from nltk.wsd import lesk
+
+from nltk.tokenize import word_tokenize
+c = lesk(word_tokenize('face of earth'),'face')
+
+print(c,c.definition())
+
+cw = lesk(word_tokenize('face mask'),'face')
+
+print(cw,cw.definition())
+

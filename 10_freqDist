@@ -1,0 +1,32 @@
+## Part - 10  Frequency Distribution in NLTK
+
+from nltk import FreqDist, ConditionalFreqDist
+
+ex = "yes no no yes yes no no"
+ex
+
+tokens = ex.split()
+tokens
+
+fd = FreqDist(tokens)
+fd
+
+fd.most_common(1)
+
+from nltk.corpus import brown
+
+word = brown.words(categories=['science_fiction'])
+len(word)
+
+m = FreqDist(word)
+m.most_common(10)
+
+m.max()
+
+m.get('space')
+
+li = [('a','hi'),('b','bye'),('b','bye')]
+
+cfd = ConditionalFreqDist(li)
+cfd['b']
+

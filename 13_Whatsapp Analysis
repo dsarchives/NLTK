@@ -1,0 +1,39 @@
+## Part - 13 Finding most common words 
+
+### Reading Data
+
+# reading text file
+import nltk
+with open('chat.txt', encoding="utf8") as chat:
+    chat_text = chat.read()
+
+### Cleaning and Preparing Data
+
+# removing punct and stopwords
+from nltk.tokenize import word_tokenize
+from string import punctuation
+temp = ""
+for char in chat_text:
+    if char not in punctuation:
+        temp += char
+words = word_tokenize(temp)
+
+from nltk.corpus import stopwords,re
+sw = set(stopwords.words("english"))
+filterd_words = [w.lower() for w in words if not w in sw]
+
+# removing names and other anomalies 
+unwanted =  {'vishnu','shahain','raghavan','preeti','pankaj','sinha','sharma','sahil','phatania','neha','mukti','omitted','image','kushbhu','am','pm'}
+filterd_words = [ele for ele in filterd_words if ele not in unwanted] 
+regex = re.compile(r'[a-zA-Z]')
+
+# filtering result
+filtered = [i for i in filterd_words if regex.match(i) and i=='nice']
+
+### Results
+
+# showing frequent ones
+from nltk import FreqDist
+filtered = FreqDist(filtered)
+filtered.most_common(5)
+
